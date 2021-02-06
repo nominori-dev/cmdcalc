@@ -27,6 +27,36 @@ void bcalcminus(int a, int b) { //аналогично как выше ток э
 	cout << "Answer: " << answer;
 }
 
+void bcalcmulti(int a, int b) {
+	int answer;
+
+	answer = a * b;
+	cout << "Answer: " << answer;
+}
+
+void bcalcsub(int a, int b) {
+	int answer;
+
+	answer = a / b;
+
+	cout << "Answer: " << answer;
+}
+
+void fcalcmulti(float a, float b) {
+	float answer;
+
+	answer = a * b;
+	cout << "Answer: " << answer;
+}
+
+void fcalcsub(float a, float b) {
+	float answer;
+
+	answer = a / b;
+
+	cout << "Answer: " << answer;
+}
+
 void fcalcplus(float a, float b) {
 	float answer;
 
@@ -53,8 +83,10 @@ int main() {
 	// переменные (нужны чтобы задавать им значения)
 	// int - integral т.е числа без точки
 	// float - числа с плавающей точкой(идеально если юзать для каких-то формул)
+	setlocale(LC_ALL, "Russian");
 	int bcalca;
 	int bcalcb;
+	char answerc;
 	float fcalca;
 	float fcalcb;
 	int i;
@@ -119,6 +151,8 @@ int main() {
 		else if (bcalcoperator == "minus") {
 			fcalcminus(fcalca, fcalcb);
 		}
+
+
 	}
 	// если написать loop то запустится эта функция
 	if (answer == "loop") { // если ответ равен loop то...
@@ -147,6 +181,29 @@ int main() {
 		cout << "   _|__|/ \|_|_.............*.............._|________|_" << endl;
 		cout << "'   / ********** \                          / ********** \'" << endl;
 		cout << "' /  ************  \                      /  ************  \'" << endl;
+	}
+
+	if (answer == "secondsecret") {
+		cout << "_00000000_0000000" << endl;
+		cout << "_0000000000000000" << endl;
+		cout << "__00000000000000" << endl;
+		cout << "____00000000000" << endl;
+		cout << "_______00000" << endl;
+		cout << "_________0" << endl;
+		cout << "________*__000000___00000" << endl;
+		cout << "_______*__00000000_0000000" << endl;
+		cout << "______*___0000000000000000" << endl;
+		cout << "______*___0000000000000000" << endl;
+		cout << "_______*_____00000000000" << endl;
+		cout << "________*_______00000" << endl;
+		cout << "_________*________0" << endl;
+		cout << "000000___00000___*" << endl;
+		cout << "00000000_0000000___*" << endl;
+		cout << "0000000000000000____*" << endl;
+		cout << "_00000000000000_____*" << endl;
+		cout << "___00000000000_____*" << endl;
+		cout << "______00000_______*" << endl;
+		cout << "________0________*" << endl;
 	}
 	// функция отвечающая за рандом
 	if (answer == "random") {
