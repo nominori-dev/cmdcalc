@@ -3,4 +3,5 @@
 ------------------------------------------------------------------------------
  header "mysql_connection.h" is useless
 
-upd 6.02.2020 - thx yomiyori for russian translation
+upd 6.02.2021 - thx yomiyori for russian translation
+upd 12.02.2021 - updated CMDcalc.cpp
