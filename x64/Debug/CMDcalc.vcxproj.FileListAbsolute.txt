@@ -1,2 +1,0 @@
-C:\Users\eveli\Documents\GitHub\cmdcalc\x64\Debug\CMDcalc.exe
-C:\Users\eveli\Documents\GitHub\cmdcalc\x64\Debug\CMDcalc.pdb

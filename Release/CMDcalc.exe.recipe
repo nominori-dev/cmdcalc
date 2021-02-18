@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\eveli\Documents\GitHub\cmdcalc\x64\Debug\CMDcalc.exe</FullPath>
+      <FullPath>C:\Users\eveli\source\repos\CMDcalc\x64\Release\CMDcalc.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

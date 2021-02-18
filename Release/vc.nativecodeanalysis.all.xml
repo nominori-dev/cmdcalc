@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\eveli\source\repos\CMDcalc\</FILEPATH>
+      <FILENAME>CMDcalc.cpp</FILENAME>
+      <LINE>84</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Переменная "Human::age" не инициализирована. Всегда инициализируйте переменную-член (type.6).</DESCRIPTION>
+    <FUNCTION>Human::{ctor}</FUNCTION>
+    <DECORATED>??0Human@@QEAA@XZ</DECORATED>
+    <FUNCLINE>84</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Human::age</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>

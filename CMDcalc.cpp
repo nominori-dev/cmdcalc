@@ -2,10 +2,25 @@
 #include<iostream>
 #include<fstream>
 #include<random>
+#include<Windows.h>
+#define BUFFER 8192
+
 using namespace std;
 
 // help void
 void Help() {
+	HANDLE  hConsole;
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	int col = 12;
+
+	// color your text in Windows console mode
+	// colors are 0=black 1=blue 2=green and so on to 15=white  
+	// colorattribute = foreground + background * 16
+	// to get red text on yellow use 4 + 14*16 = 228
+	// light red on yellow would be 12 + 14*16 = 236
+
+	FlushConsoleInputBuffer(hConsole);
+	SetConsoleTextAttribute(hConsole, col);
 	cout << "------------------------------------------------" << endl;
 	cout << "" << endl;
 	cout << "Basic integral calculator - 'bcalc'" << endl;
@@ -15,7 +30,10 @@ void Help() {
 	cout << "Random number beetwen x and y - 'random'" << endl;
 	cout << "Create car or human - 'create'" << endl;
 	cout << "Your car or human - 'show'" << endl;
+	cout << "Small math test - 'test'" << endl;
+	cout << "" << endl;
 	cout << "------------------------------------------------" << endl;
+	SetConsoleTextAttribute(hConsole, 228);
 }
 
 // Integral calc class
@@ -111,36 +129,42 @@ int main() {
 	//objects init
 	Car car;
 	Human Human;
-
 	//information about CMDcalc
-	information.version = "0.2 alpha";
-	information.release_date = "12.02.2021";
-	information.author = "nominori-dev on github";
+	information.version = " 0.2 alpha";
+	information.release_date = " 12.02.2021";
+	information.author = " nominori-dev on github";
+	HANDLE  hConsole;
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	int col = 12;
 
+	// color your text in Windows console mode
+	// colors are 0=black 1=blue 2=green and so on to 15=white  
+	// colorattribute = foreground + background * 16
+	// to get red text on yellow use 4 + 14*16 = 228
+	// light red on yellow would be 12 + 14*16 = 236
+
+	FlushConsoleInputBuffer(hConsole);
+	SetConsoleTextAttribute(hConsole, col);
 	//Welcome message
 	cout << "" << endl;
 	cout << "-------------------" << endl;
 	cout << "" << endl;
-	cout << "Welcome!" << endl;
+	cout << "Welcome! " << endl;
 	cout << "Let's get started!" << endl;
 	cout << "Print 'help'" << endl;
 	cout << "" << endl;
 	cout << "-------------------" << endl;
 	cout << "" << endl;
-
 a:
+	// string answers
 
 	string answer;
-
 	string answer2;
-
 	string answer3;
-
 	string answer4;
-	
 	string answer5;
-
 	string answer6;
+	string answer7;
 
 	cin >> answer;
 	if (answer == "Help" || answer == "help"){
@@ -149,9 +173,9 @@ a:
 
 	if (answer == "bcalc" || answer == "Bcalc") {
 		cout << "" << endl;
-		cout << "First number: " << endl; 
+		cout << "First number: " << endl;
 		cin >> bcalca;
-		cout << "Second number: " << endl; 
+		cout << "Second number: " << endl;
 		cin >> bcalcb;
 		cout << "Operator(plus/minus): " << endl;
 		cin >> bcalcoperator;
@@ -220,6 +244,7 @@ a:
 				cout << "Ok, but you can see your car by typing 'show'" << endl;
 			}
 		}
+
 
 		if (answer2 == "Human" || answer2 == "human") {
 			cout << "First name: ";
@@ -320,5 +345,20 @@ a:
 		auto random_number = dist(engine);
 		cout << "Random number beetwen " << x << " and " << w << " is : " << random_number << endl;
 	}
+
+	if (answer == "test" || answer == "Test") {
+		cout << "Question: 2+2 = ?" << endl;
+		cout << "Type answer: ";
+		cin >> answer7;
+
+		if (answer7 == "4") {
+			cout << "Congratulations! You passed math test!" << endl;
+		}
+		else {
+			cout << "Lol you noob!!!" << endl;
+		}
+	}
 	goto a;
+	SetConsoleTextAttribute(hConsole, 15); //set back to black background and white text
+	system("pause");
 }
