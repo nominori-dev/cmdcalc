@@ -12,18 +12,10 @@ void Help() {
 	HANDLE  hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	int col = 12;
-
-	// color your text in Windows console mode
-	// colors are 0=black 1=blue 2=green and so on to 15=white  
-	// colorattribute = foreground + background * 16
-	// to get red text on yellow use 4 + 14*16 = 228
-	// light red on yellow would be 12 + 14*16 = 236
-
 	FlushConsoleInputBuffer(hConsole);
 	SetConsoleTextAttribute(hConsole, col);
 	cout << "------------------------------------------------" << endl;
 	cout << "" << endl;
-	cout << "Basic integral calculator - 'bcalc'" << endl;
 	cout << "Basic float calculator - 'fcalc'" << endl;
 	cout << "Int loop - 'loop'" << endl;
 	cout << "Version - '-v'" << endl;
@@ -33,31 +25,7 @@ void Help() {
 	cout << "Small math test - 'test'" << endl;
 	cout << "" << endl;
 	cout << "------------------------------------------------" << endl;
-	SetConsoleTextAttribute(hConsole, 228);
 }
-
-// Integral calc class
-class Bcalc {
-public:
-	int a;
-	int b;
-	void plus(int y, int x) {
-		int ans;
-		a = y;
-		b = x;
-
-		ans = a + b;
-		cout << "Answer is: " << ans << endl;
-	}
-	void minus(int y, int x) {
-		int ans;
-		a = y;
-		b = x;
-
-		ans = a - b;
-		cout << "Answer is: " << ans << endl;
-	}
-};
 
 //Float calc class
 class Fcalc {
@@ -107,41 +75,21 @@ void loop(int i, int a) {
 		cout << c << endl;
 	}
 }
-// Informator class
-class info {
-public:
-	string version;
-	string release_date;
-	string author;
-};
+
 // main void
 int main() {
-	int bcalca;
-	int bcalcb;
-	float fcalca;
-	float fcalcb;
-	int i;
-	int a;
-	Bcalc bcalc;
-	Fcalc fcalc;
+	float fcalca,fcalcb;
+	int i,a;
 	string bcalcoperator;
-	info information;
 	//objects init
 	Car car;
 	Human Human;
+	Fcalc fcalc;
 	//information about CMDcalc
-	information.version = " 0.2 alpha";
-	information.release_date = " 12.02.2021";
-	information.author = " nominori-dev on github";
+
 	HANDLE  hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	int col = 12;
-
-	// color your text in Windows console mode
-	// colors are 0=black 1=blue 2=green and so on to 15=white  
-	// colorattribute = foreground + background * 16
-	// to get red text on yellow use 4 + 14*16 = 228
-	// light red on yellow would be 12 + 14*16 = 236
 
 	FlushConsoleInputBuffer(hConsole);
 	SetConsoleTextAttribute(hConsole, col);
@@ -158,35 +106,14 @@ int main() {
 a:
 	// string answers
 
-	string answer;
-	string answer2;
-	string answer3;
-	string answer4;
-	string answer5;
-	string answer6;
-	string answer7;
+	string answer,answer2,answer3,answer4,answer5,answer6,answer7;
+
 
 	cin >> answer;
 	if (answer == "Help" || answer == "help"){
 		Help();
 	}
 
-	if (answer == "bcalc" || answer == "Bcalc") {
-		cout << "" << endl;
-		cout << "First number: " << endl;
-		cin >> bcalca;
-		cout << "Second number: " << endl;
-		cin >> bcalcb;
-		cout << "Operator(plus/minus): " << endl;
-		cin >> bcalcoperator;
-		cout << "" << endl;
-		if (bcalcoperator == "plus") {
-			bcalc.plus(bcalca, bcalcb);
-		}
-		else if (bcalcoperator == "minus") {			
-			bcalc.minus(bcalca, bcalcb);
-		}
-	}
 
 	if (answer == "fcalc" || answer == "Fcalc") {
 		cout << "" << endl;
@@ -321,9 +248,9 @@ a:
 		}
 	}
 	if (answer == "-v") {
-		cout << "Version of cmdcalc: " << information.version << endl;
-		cout << "Release date of cmdcalc version: " << information.release_date << endl;
-		cout << "Author of cmdcalc: " << information.author << endl;
+		cout << "Version of cmdcalc: 1.1.0" << endl;
+		cout << "Release date of cmdcalc version: 15.04.2021" << endl;
+		cout << "Author of cmdcalc: nominori-dev" << endl;
 	}
 
 	//Random function
@@ -358,6 +285,7 @@ a:
 			cout << "Lol you noob!!!" << endl;
 		}
 	}
+
 	goto a;
 	SetConsoleTextAttribute(hConsole, 15); //set back to black background and white text
 	system("pause");
