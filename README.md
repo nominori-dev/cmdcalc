@@ -4,8 +4,8 @@
 
 
 ## Updates
-upd 6.02.2021 - thx yomiyori for russian translation
-upd 12.02.2021 - updated CMDcalc.cpp
+- upd 6.02.2021 - thx yomiyori for russian translation
+- upd 12.02.2021 - updated CMDcalc.cpp
 
 ## Features
 
